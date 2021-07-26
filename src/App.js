@@ -8,16 +8,17 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import { useStateValue } from './StateProvider';
 
 function App() {
 
-  const [user, setUser] = useState(null);
+  const [{user}, dispatch] = useStateValue();
 
   return (
     <div className="app">
 
       {!user ? (
-        <Login />
+        <Login /> 
       ): (
       <div className="app_body">
       <Router>
